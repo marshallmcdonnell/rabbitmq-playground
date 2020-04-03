@@ -1,0 +1,26 @@
+version: '3'
+services:
+  rabbitmq-server:
+    image: rabbitmq:3.8-alpine
+
+#  publisher:
+#    build: ./publisher
+#    depends_on:
+#      - rabbitmq-server
+#    ports:
+#      - "3000:3000"
+#    volumes:
+#      - "./publisher:/publisher"
+
+#  subscriber:
+#    build: ./subscriber
+#    depends_on:
+#      - rabbitmq-server
+#    volumes:
+#      - "./subscriber:/subscriber"
+
+#volumes:
+#  publisher:
+#  subscriber:
+
+
