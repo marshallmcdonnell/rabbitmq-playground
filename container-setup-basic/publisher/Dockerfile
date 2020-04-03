@@ -16,6 +16,6 @@ RUN pip install --upgrade pip && \
 
 ADD . /app
 
-EXPOSE 5000
+EXPOSE 3000
 
-CMD flask run --host=0.0.0.0
+CMD FLASK_APP=main.py flask run --port=3000 --host=0.0.0.0

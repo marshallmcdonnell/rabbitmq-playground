@@ -23,5 +23,5 @@ def emit_user_profile_update(user_id, new_data):
     print(msg.format(
         routing_key=routing_key,
         exchange_name=exchange_name,
-        data=new_data)
+        data=new_data))
     connection.close()

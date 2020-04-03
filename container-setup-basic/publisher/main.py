@@ -5,7 +5,7 @@ from services.user_event_handler import emit_user_profile_update
 
 app = Flask(__name__)
 
-@app.route('/users<int:user_id>', methods=['POST'])
+@app.route('/users/<int:user_id>', methods=['POST'])
 def update(user_id):
     new_name = request.form['full_name']
 
