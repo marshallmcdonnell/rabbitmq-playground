@@ -15,15 +15,15 @@ services:
     volumes:
       - "./publisher:/publisher"
 
-#  subscriber:
-#    build: ./subscriber
-#    depends_on:
-#      - rabbitmq-server
-#    volumes:
-#      - "./subscriber:/subscriber"
+  subscriber:
+    build: ./subscriber
+    depends_on:
+      - rabbitmq-server
+    volumes:
+      - "./subscriber:/subscriber"
 
-#volumes:
-#  publisher:
-#  subscriber:
+volumes:
+  publisher:
+  subscriber:
 
 
