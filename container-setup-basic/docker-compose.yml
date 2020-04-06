@@ -10,6 +10,9 @@ services:
     build: ./publisher
     depends_on:
       - rabbitmq-server
+    environment:
+      - RABBITMQ_HOSTNAME=rabbitmq-server
+      - RABBITMQ_PORT=5672
     ports:
       - "3000:3000"
     volumes:
@@ -19,6 +22,9 @@ services:
     build: ./subscriber
     depends_on:
       - rabbitmq-server
+    environment:
+      - RABBITMQ_HOSTNAME=rabbitmq-server
+      - RABBITMQ_PORT=5672
     volumes:
       - "./subscriber:/subscriber"
 

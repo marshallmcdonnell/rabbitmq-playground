@@ -10,12 +10,14 @@ WORKDIR /app
 
 COPY Pip* /app/
 
-RUN pip install --upgrade pip && \
+RUN apt update && \
+    apt install netcat -y && \
+    pip install --upgrade pip && \
     pip install pipenv && \
-    pipenv install --dev --system --deploy --ignore-pipfile
+    pipenv install --dev --system --deploy --ignore-pipfile && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD . /app
 
 EXPOSE 3000
-
-CMD FLASK_APP=main.py flask run --port=3000 --host=0.0.0.0
+CMD ["bash", "docker-start.sh"]
